@@ -1,0 +1,13 @@
+$prim: #F9F7F7;
+$primDark: #DBE2EF;
+$sec: #3F72AF;
+$secDark: #112D4E;
+$acc: #B83B5E;
+$black: #252525;
+
+@mixin flex-container ($direction, $space, $items) {
+    display: flex;
+    align-items: $items;
+    flex-direction: $direction;
+    justify-content: $space;    
+}
