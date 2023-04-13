@@ -46,11 +46,64 @@ header {
             background-color: rgba(0, 0, 0, 0.2)
         }
     }
+    div.mobileMenuButton {
+        display: none;
+    }
+}
+section.mobileMenu {
+    display: none;
 }
 
 /* Query Mobile */
 @media screen and (max-width: 765px) {
-
+    header {
+        flex-direction: row-reverse;
+        padding-left: 0;
+        nav {
+            display: none;
+        }
+        div.mobileMenuButton {
+            @include var.flex-container(row,center,center);
+            color: var.$prim;
+            height: 100%;
+            width: 10vh;
+            font-size: 2.5rem;
+        }
+    }
+    section.mobileMenu {
+        display: block;
+        z-index: 10;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s ease-in;
+        right: -100vw;
+        &.open {
+            right: 0;
+        }
+        section.mobileMenuHeader {
+            height: 30%;
+            @include var.flex-container(column,flex-start,space-between);
+            background-color: var.$secDark;
+            color: var.$prim;
+            div.mobileMenuClose {
+                height: 34%;
+                width: 10vh;
+                @include var.flex-container(row,center,center);
+                align-self: flex-end;
+                i {
+                    font-size: 2.8rem;
+                }
+            }
+            div.userInfo {
+                height: 66%;
+            }
+        }
+        section.mobileMenuContent {
+            background-color: var.$primDark;
+            height: 70%;
+        }
+    }
 }
 
 /* Query Tablet */

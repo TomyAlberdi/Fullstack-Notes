@@ -28,7 +28,13 @@ html {
 
 /* Query Mobile */
 @media screen and (max-width: 765px) {
-
+    html {
+        overflow-x: hidden;
+        body {
+            overflow-x: hidden;
+            position: relative;
+        }
+    }
 }
 
 /* Query Tablet */
