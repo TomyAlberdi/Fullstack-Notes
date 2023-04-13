@@ -1,13 +1,22 @@
 @use "./var";
 
 footer {
-    height: 5vh;
+    height: 4vh;
     background-color: var.$secDark;
+    @include var.flex-container(row,center,center);
+    color: var.$prim;
+    font-size: 0.8rem;
+    a {
+        text-decoration: underline;
+        color: inherit;
+    }
 }
 
 /* Query Mobile */
 @media screen and (max-width: 765px) {
-
+    footer {
+        font-size: 0.6rem;
+    }
 }
 
 /* Query Tablet */
