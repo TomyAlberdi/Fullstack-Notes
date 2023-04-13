@@ -1,11 +1,7 @@
 @use "./var";
 
-header {
-    position: fixed;
-    z-index: 5;
-    height: 10vh;
-    width: 100%;
-    background-color: var.$secDark;
+section.Welcome {
+
 }
 
 /* Query Mobile */

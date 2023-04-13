@@ -1,7 +1,8 @@
 @use "./var";
 
 footer {
-    
+    height: 5vh;
+    background-color: var.$secDark;
 }
 
 /* Query Mobile */
