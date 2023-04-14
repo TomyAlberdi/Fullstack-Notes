@@ -34,7 +34,7 @@ const Navbar = ({User,setUser}) => {
                                 <div className="userInfo" onClick={() => setOpenMenuDesktop(!OpenMenuDesktop)}>
                                     <div className="userIcon">{User.username.charAt(0).toUpperCase()}</div>
                                     <h3>{User.username}</h3>
-                                    <i className="fa-solid fa-caret-down"></i>
+                                    <i className={"fa-solid " + (OpenMenuDesktop ? "fa-xmark" : "fa-caret-down")}></i>
                                 </div>
                                 <div className={"DesktopMenu " + (OpenMenuDesktop ? " open" : "")}>
                                     <section className="MenuItem">
