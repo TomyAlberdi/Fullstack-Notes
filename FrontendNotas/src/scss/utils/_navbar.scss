@@ -193,5 +193,13 @@ section.mobileMenu {
 
 /* Query Tablet */
 @media screen and (min-width: 766px) and (max-width: 1023px) {
-
+    header {
+        div.userInfo {
+            max-width: 30vw;
+            div.userIcon {
+                width: 7vw;
+                height: 7vw;
+            }
+        }
+    }
 }
