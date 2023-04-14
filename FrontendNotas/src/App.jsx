@@ -22,7 +22,6 @@ function App() {
 		}
 	}, [Token,User])
 	
-
     return (
 		<div className="App">
 			<Navbar />

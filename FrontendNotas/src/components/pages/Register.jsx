@@ -1,13 +1,44 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 const Register = () => {
+
+    const navigate = useNavigate()
 
     const errorText = (texto) => {
         let error = document.createElement('span')
         error.classList.add('error')
         error.innerText = texto
         return error
+    }
+
+    const signup = async (username,email,password) => {
+        const url = "http://localhost:8080/users/add"
+        const aux = {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "username": username,
+                "email": email,
+                "password": password
+            })
+        }
+        fetch(url,aux)
+        .then(res => {
+            if (res.ok) {
+                navigate("/Login")
+            }
+        })
+        .catch(error => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error Signing Up',
+                text: error
+            })
+        })
     }
 
     const onSubmit = (e) => {
@@ -48,9 +79,7 @@ const Register = () => {
             return true
         }
         if (validate()) {
-            console.log("yes")
-        } else {
-            console.log("no")
+            signup(username.value,email.value,password.value)
         }
     }
 
