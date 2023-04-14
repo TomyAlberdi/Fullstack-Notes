@@ -24,7 +24,7 @@ function App() {
 	
     return (
 		<div className="App">
-			<Navbar />
+			<Navbar User={User} setUser={setUser} />
 			<main>
 				<Routes>
 					<Route exact path="/" element={ <Welcome /> } />

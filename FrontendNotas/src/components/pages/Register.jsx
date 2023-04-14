@@ -54,7 +54,7 @@ const Register = () => {
             e.classList.remove("invalid")
         })
         const validate = () => {
-            if ((!username.value)||(/^\S{6,20}$/.test(username.value) === false)) {
+            if ((!username.value)||(/^\S{6,10}$/.test(username.value) === false)) {
                 let error = errorText("The username should have between 6 and 20 characters")
                 username.after(error)
                 username.classList.add("invalid")

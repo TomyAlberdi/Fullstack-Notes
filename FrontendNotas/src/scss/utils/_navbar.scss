@@ -28,6 +28,33 @@ header {
             }
         }
     }
+    div.userInfo {
+        @include var.flex-container(row,space-between,center);
+        border-radius: 5px;
+        padding: 1vh;
+        background-color: var.$sec;
+        gap: 1vh;
+        max-width: 14vw;
+        div.userIcon {
+            width: 3vw;
+            height: 3vw;
+            @include var.flex-container(row,center,center);
+            padding: 1.4vh;
+            background-color: var.$prim;
+            color: var.$acc;
+            font-size: 2rem;
+            border-radius: 50%;
+            border: 3px solid var.$acc;
+        }
+        h3 {
+            color: var.$prim;
+        }
+        i {
+            cursor: pointer;
+            color: var.$acc;
+            font-size: 2rem;
+        }
+    }
     div.imgLogo {
         @include var.flex-container(row,center,center);
         height: 100%;
@@ -98,11 +125,68 @@ section.mobileMenu {
             }
             div.userInfo {
                 height: 66%;
+                @include var.flex-container(row-reverse,space-between,flex-end);
+                padding: 1vh;
+                div {
+                    @include var.flex-container(column,right,flex-end);
+                    div.userIcon {
+                        width: 3vw;
+                        height: 3vw;
+                        @include var.flex-container(row,center,center);
+                        padding: 3vh;
+                        background-color: var.$prim;
+                        color: var.$acc;
+                        font-size: 2rem;
+                        border-radius: 50%;
+                        border: 2px solid var.$acc;
+                    }
+                    h3 {
+                        color: var.$prim;
+                    }
+                }
             }
         }
         section.mobileMenuContent {
             background-color: var.$primDark;
             height: 70%;
+            section.mobileMenuActions {
+                height: 80%;
+                @include var.flex-container(column,flex-start,flex-end);
+                a {
+                    @include var.flex-container(row,right,center);
+                    text-decoration: none;
+                    padding: 0 2vh;
+                    color: var.$prim;
+                    height: 15%;
+                    color: var.$secDark;
+                    width: 100%;
+                    font-size: 1.2rem;
+                    border-bottom: 1px solid var.$sec;
+                }
+            }
+            section.mobileMenuFooter {
+                @include var.flex-container(column,flex-end,flex-end);
+                height: 20%;
+                h4 {
+                    cursor: pointer;
+                    color: var.$acc;
+                    font-size: 1.3rem;
+                    height: 30%;
+                    margin-right: 1.5vh;
+                }
+                div.socialMedia {
+                    @include var.flex-container(row,flex-start,center);
+                    border-top: 1px solid var.$sec;
+                    height: 70%;
+                    width: 100%;
+                    gap: 2vh;
+                    padding: 0 2vh;
+                    i {
+                        font-size: 2rem;
+                        color: var.$sec;
+                    }
+                }
+            }
         }
     }
 }

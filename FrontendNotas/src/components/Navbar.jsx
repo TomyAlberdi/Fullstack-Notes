@@ -1,19 +1,39 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({User,setUser}) => {
+
+    const navigate = useNavigate()
 
     const openMenu = () => {
         let menu = document.querySelector(".mobileMenu")
         menu.classList.toggle('open')
     }
 
+    const LogOut = () => {
+        setUser(null) 
+        navigate("/Login")
+    }
+
     return (
         <>
             <header>
                 <nav>
-                    <Link to={"/Login"}>Login</Link>
-                    <Link to={"/Register"}>Register</Link>
+                    {
+                        !User ?
+                            <>
+                                <Link to={"/Login"}>Login</Link>
+                                <Link to={"/Register"}>Register</Link>
+                            </>
+                        :
+                            <> 
+                                <div className="userInfo">
+                                    <div className="userIcon">{User.username.charAt(0).toUpperCase()}</div>
+                                    <h3>{User.username}</h3>
+                                    <i className="fa-solid fa-xmark" onClick={LogOut}></i>
+                                </div>
+                            </>
+                    }
                 </nav>
                 <div className="mobileMenuButton" onClick={openMenu}>
                     <i className="fa-solid fa-bars"></i>
@@ -27,13 +47,50 @@ const Navbar = () => {
                     <div className="mobileMenuClose" onClick={openMenu}>
                         <i className="fa-solid fa-xmark"></i>
                     </div>
-                    <div className="userInfo">
-                        <div className="userIcon">icon</div>
-                        <h3 className="userName">Profile</h3>
-                    </div>
+                    {
+                        !!User ? 
+                            <div className="userInfo">
+                                <div>
+                                    <div className="userIcon">{User.username.charAt(0).toUpperCase()}</div>
+                                    <h3>{User.username}</h3>
+                                </div>
+                            </div>
+                        : 
+                            <div className='userInfo'>
+                                <h2>MENU</h2>
+                            </div>
+                    }
                 </section>
                 <section className="mobileMenuContent">
-                    <h2>content</h2>
+                    <section className="mobileMenuActions">
+                        {
+                            !User ?
+                                <>
+                                    <Link to={"/Login"} onClick={openMenu}>Login</Link>
+                                    <Link to={"/Register"} onClick={openMenu}>Register</Link>
+                                </>
+                            :
+                                <>
+                                    <h2>actions available to users</h2>
+                                </>
+                        }
+                    </section>
+                    <section className="mobileMenuFooter">
+                        {
+                            !!User ?
+                                <h4 onClick={() => {
+                                    LogOut();
+                                    openMenu();
+                                }}>Log Out</h4>
+                            : <></>
+                        }
+                        <div className="socialMedia">
+                            <i className="fa-brands fa-facebook"></i>
+                            <i className="fa-brands fa-linkedin-in"></i>
+                            <i className="fa-brands fa-twitter"></i>
+                            <i className="fa-brands fa-instagram"></i>
+                        </div>
+                    </section>
                 </section>
             </section>
         </>
