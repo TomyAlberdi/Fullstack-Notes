@@ -92,7 +92,7 @@ const Login = ({setUser,setToken}) => {
                 <section>
                     <input name='password' type='password' placeholder='Password' />
                 </section>
-                <button>Create Account</button>
+                <button>Log In</button>
             </form>
             <h3>Or <Link to={"/Register"}>Sign Up</Link></h3>
         </section>

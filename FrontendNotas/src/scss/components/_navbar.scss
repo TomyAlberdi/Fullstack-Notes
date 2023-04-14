@@ -27,32 +27,43 @@ header {
                 background-color: var.$acc
             }
         }
-    }
-    div.userInfo {
-        @include var.flex-container(row,space-between,center);
-        border-radius: 5px;
-        padding: 1vh;
-        background-color: var.$sec;
-        gap: 1vh;
-        max-width: 14vw;
-        div.userIcon {
-            width: 3vw;
-            height: 3vw;
-            @include var.flex-container(row,center,center);
-            padding: 1.4vh;
-            background-color: var.$prim;
-            color: var.$acc;
-            font-size: 2rem;
-            border-radius: 50%;
-            border: 3px solid var.$acc;
+        div.userInfo {
+            @include var.flex-container(row,left,center);
+            border-radius: 5px;
+            padding: 1vh;
+            background-color: var.$sec;
+            gap: 1vh;
+            width: 12vw;
+            div.userIcon {
+                width: 3vw;
+                height: 3vw;
+                @include var.flex-container(row,center,center);
+                padding: 1.4vh;
+                background-color: var.$prim;
+                color: var.$acc;
+                font-size: 2rem;
+                border-radius: 50%;
+                border: 3px solid var.$acc;
+            }
+            h3 {
+                color: var.$prim;
+            }
         }
-        h3 {
-            color: var.$prim;
-        }
-        i {
-            cursor: pointer;
-            color: var.$acc;
-            font-size: 2rem;
+        div.DesktopMenu {
+            @include var.flex-container(column,left,flex-start);
+            position: absolute;
+            top: 10vh;
+            left: 2vh;
+            width: 12vw;
+            gap: 1vh;
+            section.MenuItem {
+                @include var.flex-container(row,space-between,center);
+                padding: 0 1vw;
+                border: 1px solid red;
+                height: 5vh;
+                width: 100%;
+                border-radius: 5px;
+            }
         }
     }
     div.imgLogo {
@@ -102,12 +113,14 @@ section.mobileMenu {
         display: block;
         z-index: 10;
         position: absolute;
+        top: 0;
         width: 100%;
         height: 100%;
         transition: all 0.3s ease-in;
         right: -100vw;
         &.open {
             right: 0;
+            position: fixed;
         }
         section.mobileMenuHeader {
             height: 30%;

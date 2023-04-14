@@ -8,6 +8,7 @@ const Navbar = ({User,setUser}) => {
     const openMenu = () => {
         let menu = document.querySelector(".mobileMenu")
         menu.classList.toggle('open')
+        document.body.classList.toggle('no-scroll')
     }
 
     const LogOut = () => {
@@ -30,7 +31,17 @@ const Navbar = ({User,setUser}) => {
                                 <div className="userInfo">
                                     <div className="userIcon">{User.username.charAt(0).toUpperCase()}</div>
                                     <h3>{User.username}</h3>
-                                    <i className="fa-solid fa-xmark" onClick={LogOut}></i>
+                                </div>
+                                <div className="DesktopMenu">
+                                    <section className="MenuItem">
+                                        <h4>menuitem</h4>
+                                    </section>
+                                    <section className="MenuItem">
+                                        <h4>menuitem</h4>
+                                    </section>
+                                    <section className="MenuItem">
+                                        <h4>menuitem</h4>
+                                    </section>
                                 </div>
                             </>
                     }
