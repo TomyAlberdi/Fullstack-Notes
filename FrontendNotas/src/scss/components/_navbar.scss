@@ -112,15 +112,15 @@ section.mobileMenu {
     section.mobileMenu {
         display: block;
         z-index: 10;
-        position: absolute;
+        position: fixed;
         top: 0;
         width: 100%;
-        height: 100%;
+        height: 100dvh;
         transition: all 0.3s ease-in;
         right: -100vw;
         &.open {
+            transition: all 0.3s ease-in;
             right: 0;
-            position: fixed;
         }
         section.mobileMenuHeader {
             height: 30%;
@@ -207,11 +207,17 @@ section.mobileMenu {
 /* Query Tablet */
 @media screen and (min-width: 766px) and (max-width: 1023px) {
     header {
-        div.userInfo {
-            max-width: 30vw;
-            div.userIcon {
-                width: 7vw;
-                height: 7vw;
+        nav {
+            div.userInfo {
+                width: 30vw;
+                div.userIcon {
+                    width: 7vw;
+                    height: 7vw;
+                }
+            }
+            div.DesktopMenu {
+                left: 1vw;
+                width: 30vw;
             }
         }
     }

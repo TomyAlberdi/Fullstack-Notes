@@ -35,7 +35,9 @@ html {
             position: relative;
             &.no-scroll {
                 overflow-y: hidden;
-                position: fixed;
+            }
+            div.App {
+                height: 100dvh;
             }
         }
     }
@@ -43,5 +45,11 @@ html {
 
 /* Query Tablet */
 @media screen and (min-width: 766px) and (max-width: 1023px) {
-
+    html {
+        body {
+            div.App {
+                height: 100dvh;
+            }
+        }
+    }
 }
