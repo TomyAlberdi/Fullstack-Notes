@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 
 const Navbar = ({User,setUser}) => {
 
     const navigate = useNavigate()
 
+    const [OpenMenuDesktop, setOpenMenuDesktop] = useState(false)
+
+    const [OpenMenuMobile, setOpenMenuMobile] = useState(false)
+
     const openMenu = () => {
-        let menu = document.querySelector(".mobileMenu")
-        menu.classList.toggle('open')
+        setOpenMenuMobile(!OpenMenuMobile)
         document.body.classList.toggle('no-scroll')
     }
 
@@ -28,11 +31,12 @@ const Navbar = ({User,setUser}) => {
                             </>
                         :
                             <> 
-                                <div className="userInfo">
+                                <div className="userInfo" onClick={() => setOpenMenuDesktop(!OpenMenuDesktop)}>
                                     <div className="userIcon">{User.username.charAt(0).toUpperCase()}</div>
                                     <h3>{User.username}</h3>
+                                    <i className="fa-solid fa-caret-down"></i>
                                 </div>
-                                <div className="DesktopMenu">
+                                <div className={"DesktopMenu " + (OpenMenuDesktop ? " open" : "")}>
                                     <section className="MenuItem">
                                         <h4>menuitem</h4>
                                     </section>
@@ -53,7 +57,7 @@ const Navbar = ({User,setUser}) => {
                     <Link to={"/Home"}><img src="/favicon.ico" /></Link>
                 </div>
             </header>
-            <section className="mobileMenu">
+            <section className={"mobileMenu " + (OpenMenuMobile ? "open" : "")}>
                 <section className="mobileMenuHeader">
                     <div className="mobileMenuClose" onClick={openMenu}>
                         <i className="fa-solid fa-xmark"></i>
