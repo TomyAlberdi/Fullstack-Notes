@@ -65,10 +65,10 @@ const Register = () => {
                     <input name='email' placeholder='Email' />
                 </section>
                 <section>
-                    <input name='password' placeholder='Password' />
+                    <input name='password' type='password' placeholder='Password' />
                 </section>
                 <section>
-                    <input name='passwordConfirm' placeholder='Confirm Password' />
+                    <input name='passwordConfirm' type='password' placeholder='Confirm Password' />
                 </section>
                 <button>Create Account</button>
             </form>

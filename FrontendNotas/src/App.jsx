@@ -6,15 +6,30 @@ import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import Welcome from "./components/pages/Welcome";
 import Register from "./components/pages/Register";
+import { useEffect, useState } from "react";
 
 function App() {
+
+	const [Token, setToken] = useState(localStorage.getItem('token'))
+	const [User, setUser] = useState(JSON.parse(localStorage.getItem('user')))
+	useEffect(() => {
+		if (Token !== null && User !== null) {
+			localStorage.setItem('token',Token)
+			localStorage.setItem('user',JSON.stringify(User))
+		} else {
+			localStorage.removeItem('token')
+			localStorage.removeItem('user')
+		}
+	}, [Token,User])
+	
+
     return (
 		<div className="App">
 			<Navbar />
 			<main>
 				<Routes>
 					<Route exact path="/" element={ <Welcome /> } />
-					<Route path="/Login" element={ <Login /> } />
+					<Route path="/Login" element={ <Login setUser={setUser} setToken={setToken} /> } />
 					<Route path="/Register" element={ <Register /> } />
 					<Route path="/Home" element={<Home />} />
 					<Route path="*" element={ <Navigate to="/Home" /> } />
