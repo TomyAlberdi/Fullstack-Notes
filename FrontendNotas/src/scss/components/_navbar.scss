@@ -73,6 +73,12 @@ header {
                 height: 5vh;
                 width: 100%;
                 border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.2s ease;
+                &:hover {
+                    transform: translateX(1vh);
+                    transition: all 0.2s ease;
+                }
             }
         }
     }

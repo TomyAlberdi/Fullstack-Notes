@@ -43,8 +43,8 @@ const Navbar = ({User,setUser}) => {
                                     <section className="MenuItem">
                                         <h4>menuitem</h4>
                                     </section>
-                                    <section className="MenuItem">
-                                        <h4>menuitem</h4>
+                                    <section className="MenuItem" onClick={() => {LogOut();setOpenMenuDesktop(false)}}>
+                                        <h4>Log Out</h4>
                                     </section>
                                 </div>
                             </>
