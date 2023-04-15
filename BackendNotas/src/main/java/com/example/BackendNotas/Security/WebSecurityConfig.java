@@ -60,6 +60,7 @@ public class WebSecurityConfig {
                     .requestMatchers(String.valueOf(PathRequest.toStaticResources().atCommonLocations())).permitAll() // Permitir acceso a recursos estáticos (como css, js, etc.)
                     .requestMatchers(new AntPathRequestMatcher("/notes/add")).authenticated()
                     .requestMatchers(new AntPathRequestMatcher("/notes/list/{id}")).authenticated()
+                    .requestMatchers(new AntPathRequestMatcher("/notes/delete/{id}")).authenticated()
                     .anyRequest().permitAll() // Permitir acceso para cualquier otra solicitud
                     .and()
                     .httpBasic()

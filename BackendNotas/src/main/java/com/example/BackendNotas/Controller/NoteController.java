@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.text.html.Option;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -46,6 +47,17 @@ public class NoteController {
         return notes.isEmpty()
                 ? ResponseEntity.status(HttpStatus.NOT_FOUND).body(array)
                 : ResponseEntity.ok(notes);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id) {
+        Optional<Note> note = noteService.findById(id);
+        if (note.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Note with ID " + id + " not found");
+        } else {
+            noteService.delete(id);
+            return ResponseEntity.ok().body("Note deleted succesfully");
+        }
     }
 
 }

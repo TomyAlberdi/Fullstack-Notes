@@ -38,4 +38,12 @@ public class NoteService {
         return noteRepository.getByUserId(id);
     }
 
+    public Optional<Note> findById(Long id) {
+        return noteRepository.findById(id);
+    }
+
+    public void delete(Long id) {
+        noteRepository.deleteById(id);
+    }
+
 }
