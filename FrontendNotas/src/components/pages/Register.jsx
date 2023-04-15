@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import Swal from 'sweetalert2'
+import 'sweetalert2/src/sweetalert2.scss'
 
 const Register = () => {
 
@@ -14,7 +15,7 @@ const Register = () => {
     }
 
     const signup = async (username,email,password) => {
-        const url = "http://localhost:8080/users/add"
+        const url = "http://192.168.0.183:8080/users/add"
         const aux = {
             method: "POST",
             headers: {

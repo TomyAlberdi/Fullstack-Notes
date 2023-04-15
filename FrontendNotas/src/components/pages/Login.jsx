@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import Swal from 'sweetalert2'
+import 'sweetalert2/src/sweetalert2.scss'
 
 const Login = ({setUser,setToken}) => {
 
@@ -14,7 +15,7 @@ const Login = ({setUser,setToken}) => {
     }
 
     const login = async (email,password) => {
-        const url = "http://localhost:8080/login"
+        const url = "http://192.168.0.183:8080/login"
         const aux = {
             method: "POST",
             headers: {
@@ -26,22 +27,24 @@ const Login = ({setUser,setToken}) => {
             })
         }
         fetch(url,aux)
-        .then(res => res.json())
-        .then(data => {
-            setToken(data.token)
-            fetch(`http://localhost:8080/users/searchEmail/${email}`)
-            .then(res => res.json())
-            .then(data => {
-                setUser(data)
-                navigate("/home")
-            })
-            .catch(error => {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error Logging In',
-                    text: error
+        .then(res => {
+            if (res.ok) {
+                res = res.json()
+                setToken(res.token)
+                fetch(`http://192.168.0.183:8080/users/searchEmail/${email}`)
+                .then(response => response.json())
+                .then(data => {
+                    setUser(data)
+                    navigate("/home")
                 })
-            })
+                .catch(error => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error Logging In',
+                        text: error
+                    })
+                })
+            }
         })
         .catch(error => {
             Swal.fire({
