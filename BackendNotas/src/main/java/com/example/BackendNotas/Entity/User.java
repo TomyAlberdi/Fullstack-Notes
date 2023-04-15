@@ -3,6 +3,7 @@ package com.example.BackendNotas.Entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,6 +14,7 @@ import lombok.Setter;
 @Table(name = "User")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
     @Id
