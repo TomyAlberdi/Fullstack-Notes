@@ -38,10 +38,10 @@ const Navbar = ({User,setUser}) => {
                                 </div>
                                 <div className={"DesktopMenu " + (OpenMenuDesktop ? " open" : "")}>
                                     <section className="MenuItem">
-                                        <h4>menuitem</h4>
+                                        <h4>Profile</h4>
                                     </section>
-                                    <section className="MenuItem">
-                                        <h4>menuitem</h4>
+                                    <section className="MenuItem" onClick={() => {navigate("/Home");setOpenMenuDesktop(false)}}>
+                                        <h4>Home</h4>
                                     </section>
                                     <section className="MenuItem" onClick={() => {LogOut();setOpenMenuDesktop(false)}}>
                                         <h4>Log Out</h4>
