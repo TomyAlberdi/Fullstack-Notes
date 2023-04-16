@@ -44,6 +44,11 @@ const Login = ({setUser,setToken}) => {
                         text: error
                     })
                 })
+            } else if (res.status == 500) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Incorrect Username or Password',
+                })
             }
         })
         .catch(error => {
