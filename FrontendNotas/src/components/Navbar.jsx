@@ -59,17 +59,17 @@ const Navbar = ({User,setUser}) => {
                                     <div className="userIcon">{User.username.charAt(0).toUpperCase()}</div>
                                     <h3>{User.username}</h3>
                                     <i className={"fa-solid " + (OpenMenuDesktop ? "fa-xmark" : "fa-caret-down")}></i>
-                                </div>
-                                <div className={"DesktopMenu " + (OpenMenuDesktop ? " open" : "")}>
-                                    <section className="MenuItem">
-                                        <h4>Profile</h4>
-                                    </section>
-                                    <section className="MenuItem" onClick={() => {navigate("/Home");setOpenMenuDesktop(false)}}>
-                                        <h4>Home</h4>
-                                    </section>
-                                    <section className="MenuItem" onClick={() => {LogOut();setOpenMenuDesktop(false)}}>
-                                        <h4>Log Out</h4>
-                                    </section>
+                                    <div className={"DesktopMenu " + (OpenMenuDesktop ? " open" : "")}>
+                                        <section className="MenuItem">
+                                            <h4>Profile</h4>
+                                        </section>
+                                        <section className="MenuItem" onClick={() => {navigate("/Home");setOpenMenuDesktop(false)}}>
+                                            <h4>Home</h4>
+                                        </section>
+                                        <section className="MenuItem" onClick={() => {LogOut();setOpenMenuDesktop(false)}}>
+                                            <h4>Log Out</h4>
+                                        </section>
+                                    </div>
                                 </div>
                             </>
                     }
