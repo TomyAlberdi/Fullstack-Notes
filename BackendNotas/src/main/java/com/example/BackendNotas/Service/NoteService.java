@@ -23,6 +23,7 @@ public class NoteService {
 
         Note note = new Note();
         note.setText(noteDTO.getText());
+        note.setTitle(noteDTO.getTitle());
 
         Optional<User> userOptional = userService.findById(noteDTO.getUser_id());
         if (userOptional.isEmpty()) {
