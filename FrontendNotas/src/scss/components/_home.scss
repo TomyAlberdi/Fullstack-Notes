@@ -1,7 +1,24 @@
 @use "./var";
 
 section.Home {
-
+    @include var.flex-container(column,left,flex-start);
+    padding: 1vw 2vw;
+    h1 {
+        font-size: 2rem;
+        width: 100%;
+        border-bottom: 3px solid var.$secDark;
+        color: var.$secDark;
+    }
+    section {
+        padding: 1vh 0;
+        width: 100%;
+        &.newNote {
+            border: 1px solid green;
+        }
+        &.notes {
+            border: 1px solid blue;;
+        }
+    }
 }
 
 /* Query Mobile */

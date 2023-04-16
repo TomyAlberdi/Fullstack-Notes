@@ -30,7 +30,7 @@ function App() {
 					<Route exact path="/" element={ <Welcome User={User} /> } />
 					<Route path="/Login" element={ <Login setUser={setUser} setToken={setToken} /> } />
 					<Route path="/Register" element={ <Register /> } />
-					<Route path="/Home" element={<Home User={User} />} />
+					<Route path="/Home" element={<Home User={User} Token={Token} />} />
 					<Route path="*" element={ <Navigate to="/Home" /> } />
 				</Routes>
 			</main>

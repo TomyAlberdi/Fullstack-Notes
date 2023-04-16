@@ -26,38 +26,30 @@ const Login = ({setUser,setToken}) => {
                 password: password
             })
         }
-        fetch(url,aux)
-        .then(res => {
+        try {
+            const res = await fetch(url,aux)
             if (res.ok) {
-                res = res.json()
-                setToken(res.token)
-                fetch(`http://192.168.0.183:8080/users/searchEmail/${email}`)
-                .then(response => response.json())
-                .then(data => {
-                    setUser(data)
-                    navigate("/home")
-                })
-                .catch(error => {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error Logging In',
-                        text: error
-                    })
-                })
-            } else if (res.status == 500) {
+                const data = await res.json()
+                setToken(data.token)
+                const getUser = await fetch(`http://192.168.0.183:8080/users/searchEmail/${email}`)
+                if (getUser.ok) {
+                    const userData = await getUser.json()
+                    setUser(userData)
+                    navigate("/Home")
+                }
+            } else {
                 Swal.fire({
                     icon: 'error',
                     title: 'Incorrect Username or Password',
                 })
             }
-        })
-        .catch(error => {
+        } catch(error) {
             Swal.fire({
                 icon: 'error',
                 title: 'Error Logging In',
                 text: error
             })
-        })
+        }
     }
 
     const onSubmit = (e) => {
