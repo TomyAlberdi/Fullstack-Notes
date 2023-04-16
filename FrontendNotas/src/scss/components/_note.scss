@@ -1,0 +1,34 @@
+@use "./var";
+
+article.Note {
+    border: 1px solid red;
+    width: 300px;
+    padding: 1vh;
+    height: fit-content;
+    border-radius: 10px;
+    margin-bottom: 1vh;
+    h4 {
+        font-size: 1.3rem;
+    }
+    div.text {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 10; /* number of lines to show */
+                line-clamp: 10; 
+        -webkit-box-orient: vertical;
+    }
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+    article.Note {
+        width: 175px;
+    }
+}
+
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+    article.Note {
+        width: 240px;
+    }
+}

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Note from '../Note'
+import Masonry from 'react-masonry-css'
 
 const Home = ({User,Token}) => {
 
@@ -27,6 +29,12 @@ const Home = ({User,Token}) => {
             })
         }
     },[LoadingNotes])
+
+    const MasonryBreakpoints = {
+        default: 6,
+        1023: 3,
+        765: 2,
+    }
     
     return (
         <section className="Home">
@@ -35,7 +43,22 @@ const Home = ({User,Token}) => {
                 <h2>New note</h2>
             </section>
             <section className="notes">
-                <h2>notes</h2>
+                {
+                    LoadingNotes ?
+                        <h2>Loading Notes</h2>
+                    :
+                        <Masonry
+                            breakpointCols={MasonryBreakpoints}
+                            className="my-masonry-grid"
+                            columnClassName="my-masonry-grid_column"
+                        >
+                            {
+                                Notes.map((e,index) => {
+                                    return <Note key={index} Data={e} />
+                                })
+                            }
+                        </Masonry>
+                }
             </section>
         </section>
     )
