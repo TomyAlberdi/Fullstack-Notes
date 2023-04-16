@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 
 const Navbar = ({User,setUser}) => {
@@ -19,6 +19,30 @@ const Navbar = ({User,setUser}) => {
         navigate("/Login")
     }
 
+    /**
+     * Hook that alerts clicks outside of the passed ref
+     */
+    function useOutsideAlerter(ref) {
+        useEffect(() => {
+        /**
+         * Alert if clicked on outside of element
+         */
+        function handleClickOutside(event) {
+            if (ref.current && !ref.current.contains(event.target)) {
+                setOpenMenuDesktop(false)
+            }
+        }
+        // Bind the event listener
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            // Unbind the event listener on clean up
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+        }, [ref]);
+    }
+    const wrapperRef = useRef(null);
+    useOutsideAlerter(wrapperRef);
+
     return (
         <>
             <header>
@@ -31,7 +55,7 @@ const Navbar = ({User,setUser}) => {
                             </>
                         :
                             <> 
-                                <div className="userInfo" onClick={() => setOpenMenuDesktop(!OpenMenuDesktop)}>
+                                <div className="userInfo" onClick={() => setOpenMenuDesktop(!OpenMenuDesktop)} ref={wrapperRef}>
                                     <div className="userIcon">{User.username.charAt(0).toUpperCase()}</div>
                                     <h3>{User.username}</h3>
                                     <i className={"fa-solid " + (OpenMenuDesktop ? "fa-xmark" : "fa-caret-down")}></i>

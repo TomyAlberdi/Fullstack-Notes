@@ -28,7 +28,7 @@ header {
             }
         }
         div.userInfo {
-            @include var.flex-container(row,left,center);
+            @include var.flex-container(row,space-between,center);
             border-radius: 5px;
             padding: 1vh;
             background-color: rgba(0, 0, 0, 0.3);
