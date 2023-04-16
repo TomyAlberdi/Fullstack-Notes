@@ -27,7 +27,7 @@ function App() {
 			<Navbar User={User} setUser={setUser} />
 			<main>
 				<Routes>
-					<Route exact path="/" element={ <Welcome /> } />
+					<Route exact path="/" element={ <Welcome User={User} /> } />
 					<Route path="/Login" element={ <Login setUser={setUser} setToken={setToken} /> } />
 					<Route path="/Register" element={ <Register /> } />
 					<Route path="/Home" element={<Home User={User} />} />
