@@ -16,7 +16,7 @@ import java.util.Optional;
 @AllArgsConstructor
 @RestController
 @RestControllerAdvice
-@CrossOrigin(origins = { "http://127.0.0.1:5173", "http://localhost:5173" })
+@CrossOrigin(origins = { "http://127.0.0.1:5173", "http://localhost:5173", "http://192.168.0.183:5173" })
 @Validated
 @RequestMapping("/users")
 public class UserController {
