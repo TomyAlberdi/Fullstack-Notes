@@ -34,6 +34,7 @@ const Home = ({User,Token}) => {
 
     const MasonryBreakpoints = {
         default: 6,
+        1300: 4,
         1023: 3,
         765: 2,
     }

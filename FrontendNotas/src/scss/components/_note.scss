@@ -1,7 +1,6 @@
 @use "./var";
 
 article.Note {
-    width: 300px;
     padding: 1vh;
     height: fit-content;
     border-radius: 10px;
@@ -22,13 +21,19 @@ article.Note {
 /* Query Mobile */
 @media screen and (max-width: 765px) {
     article.Note {
-        width: 175px;
+        width: 47vw;
     }
 }
 
 /* Query Tablet */
 @media screen and (min-width: 766px) and (max-width: 1023px) {
     article.Note {
-        width: 240px;
+        width: 30vw;
+    }
+}
+
+@media screen and (min-width: 1024) and (max-width: 1400px) {
+    article.Note {
+        width: 100px;
     }
 }
