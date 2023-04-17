@@ -10,48 +10,69 @@ section.Home {
         color: var.$secDark;
     }
     section {
-        margin: 1vh 0;
-        &.newNote {
-            height: 10vh;
-            border-radius: 5px;
-            background-color: var.$secDark;
-            form {
-                height: 100%;
-                @include var.flex-container(row,space-between,center);
-                gap: 0.5vh;
-                padding: 0 0.5vh;
-                div.newNoteInputs {
-                    padding: 0.5vh 0;
-                    width: 25vw;
-                    height: 100%;
-                    @include var.flex-container(column,center,center);
-                    gap: 0.5vh;
-                    input {
+        &.controlPanel {
+            @include var.flex-container(row,left,center);
+            gap: 1vh;
+            padding: 1vh 0;
+            section {
+                @include var.flex-container(row,center,center);
+                width: 200px;
+                height: 5vh;
+                margin: unset;
+                border-radius: 5px;
+                color: var.$prim;
+                background-color: var.$secDark;
+                cursor: pointer;
+                &.createNote {
+                    div.createNoteSection {
+                        height: 10vh;
+                        border-radius: 5px;
                         background-color: var.$secDark;
-                        height: 4vh;
-                        width: 100%;
-                        border: none;
-                        padding: 0.5vh;
-                        font-size: 1rem;
-                        color: var.$prim;
-                        &:focus {
-                            outline: none;
-                        }
-                        &::placeholder {
-                            color: var.$prim;
+                        form {
+                            height: 100%;
+                            @include var.flex-container(row,space-between,center);
+                            gap: 0.5vh;
+                            padding: 0 0.5vh;
+                            div.newNoteInputs {
+                                padding: 0.5vh 0;
+                                width: 25vw;
+                                height: 100%;
+                                @include var.flex-container(column,center,center);
+                                gap: 0.5vh;
+                                input {
+                                    background-color: var.$secDark;
+                                    height: 4vh;
+                                    width: 100%;
+                                    border: none;
+                                    padding: 0.5vh;
+                                    font-size: 1rem;
+                                    color: var.$prim;
+                                    &:focus {
+                                        outline: none;
+                                    }
+                                    &::placeholder {
+                                        color: var.$prim;
+                                    }
+                                }
+                            }
+                            button {
+                                background-color: rgba(0, 0, 0, 0.3);
+                                color: var.$prim;
+                                height: 90%;
+                                width: 9vh;
+                                font-size: 2rem;
+                                border: none;
+                                cursor: pointer;
+                                &:hover {
+                                    background-color: rgba(0, 0, 0, 0.2);
+                                }
+                            }
                         }
                     }
                 }
-                button {
-                    background-color: rgba(0, 0, 0, 0.3);
-                    color: var.$prim;
-                    height: 90%;
-                    width: 9vh;
-                    font-size: 2rem;
-                    border: none;
-                    cursor: pointer;
-                    &:hover {
-                        background-color: rgba(0, 0, 0, 0.2);
+                &.searchNote {
+                    div.searchNoteSection {
+
                     }
                 }
             }

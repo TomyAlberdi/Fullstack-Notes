@@ -77,14 +77,31 @@ const Home = ({User,Token}) => {
     return (
         <section className="Home">
             <h1>My Notes</h1>
-            <section className="newNote">
-                <form onSubmit={submitNote}>
-                    <div className="newNoteInputs">
-                        <input type="text" name="noteTitle" id="noteTitle" placeholder='Title' required />
-                        <input type="text" name="noteText" id="noteText" placeholder='Add a note...' />
-                    </div>
-                    <button type="submit"><i className='fa-solid fa-plus'></i></button>
-                </form>
+            <section className="controlPanel">
+                <section className="createNote">
+                    <h4>Add Note</h4>
+                    {/* <div className="createNoteSection">
+                        <form onSubmit={submitNote}>
+                            <div className="newNoteInputs">
+                                <input type="text" name="noteTitle" id="noteTitle" placeholder='Title' required />
+                                <input type="text" name="noteText" id="noteText" placeholder='Add a note...' />
+                            </div>
+                            <button type="submit"><i className='fa-solid fa-plus'></i></button>
+                        </form>
+                    </div> */}
+                </section>
+                <section className="searchNote">
+                    <h4>Search Note</h4>
+                    {/* <div className="createNoteSection">
+                        <form onSubmit={submitNote}>
+                            <div className="newNoteInputs">
+                                <input type="text" name="noteTitle" id="noteTitle" placeholder='Title' required />
+                                <input type="text" name="noteText" id="noteText" placeholder='Add a note...' />
+                            </div>
+                            <button type="submit"><i className='fa-solid fa-plus'></i></button>
+                        </form>
+                    </div> */}
+                </section>
             </section>
             <section className="notes">
                 {
