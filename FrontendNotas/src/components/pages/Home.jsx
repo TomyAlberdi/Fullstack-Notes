@@ -98,7 +98,7 @@ const Home = ({User,Token}) => {
                         >
                             {
                                 Notes.map((e,index) => {
-                                    return <Note key={index} Data={e} />
+                                    return <Note key={index} Data={e} Token={Token} setLoadingNotes={setLoadingNotes} />
                                 })
                             }
                         </Masonry>

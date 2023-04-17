@@ -1,6 +1,7 @@
 @use "./var";
 
 article.Note {
+    background-color: var.$prim;
     padding: 1vh;
     height: fit-content;
     border-radius: 10px;
@@ -15,6 +16,21 @@ article.Note {
         -webkit-line-clamp: 10; /* number of lines to show */
                 line-clamp: 10; 
         -webkit-box-orient: vertical;
+    }
+    div.controls {
+        @include var.flex-container(row,left,center);
+        margin-top: 1vh;
+        gap: 1vh;
+        i {
+            background-color: var.$sec;
+            padding: 1vh;
+            border-radius: 5px;
+            color: var.$prim;
+            cursor: pointer;
+            &:hover {
+                background-color: #5887c2;
+            }
+        }
     }
 }
 
