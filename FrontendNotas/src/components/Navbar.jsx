@@ -61,13 +61,13 @@ const Navbar = ({User,setUser}) => {
                                     <i className={"fa-solid " + (OpenMenuDesktop ? "fa-xmark" : "fa-caret-down")}></i>
                                     <div className={"DesktopMenu " + (OpenMenuDesktop ? " open" : "")}>
                                         <section className="MenuItem">
-                                            <h4>Profile</h4>
+                                            <h4>Profile<i className="fa-solid fa-user"></i></h4>
                                         </section>
                                         <section className="MenuItem" onClick={() => {navigate("/Home");setOpenMenuDesktop(false)}}>
-                                            <h4>Home</h4>
+                                            <h4>Home<i className="fa-solid fa-house"></i></h4>
                                         </section>
                                         <section className="MenuItem" onClick={() => {LogOut();setOpenMenuDesktop(false)}}>
-                                            <h4>Log Out</h4>
+                                            <h4>Log Out<i className="fa-solid fa-right-from-bracket"></i></h4>
                                         </section>
                                     </div>
                                 </div>
