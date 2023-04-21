@@ -13,7 +13,7 @@ function App() {
 	const [Token, setToken] = useState(localStorage.getItem('token'))
 	const [User, setUser] = useState(JSON.parse(localStorage.getItem('user')))
 	useEffect(() => {
-		if (Token !== null && User !== null) {
+		if (Token && User) {
 			localStorage.setItem('token',Token)
 			localStorage.setItem('user',JSON.stringify(User))
 		} else {

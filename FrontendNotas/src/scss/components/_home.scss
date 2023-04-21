@@ -2,88 +2,35 @@
 
 section.Home {
     @include var.flex-container(column,left,flex-start);
-    padding: 1vw 2vw;
-    h1 {
-        font-size: 2rem;
-        width: 100%;
-        border-bottom: 3px solid var.$secDark;
-        color: var.$secDark;
-    }
     section {
         &.controlPanel {
-            @include var.flex-container(row,left,center);
-            gap: 1vh;
-            padding: 1vh 0;
-            div.refWrapper {
-                section {
+            @include var.flex-container(row,space-between,center);
+            padding: 1vh 2vh;
+            width: 100%;
+            height: 10vh;
+            h1 {
+                font-size: 2rem;
+                color: var.$secDark;
+            }
+            div {
+                @include var.flex-container(row,center,center);
+                gap: 1vh;
+                span {
                     @include var.flex-container(row,center,center);
-                    width: 200px;
-                    height: 5vh;
-                    margin: unset;
-                    border-radius: 5px;
-                    color: var.$prim;
                     background-color: var.$secDark;
+                    width: 60px;
+                    height: 60px;
                     cursor: pointer;
-                    &.createNote {
-                        div.createNoteSection {
-                            height: 10vh;
-                            border-radius: 5px;
-                            background-color: var.$sec;
-                            form {
-                                height: 100%;
-                                @include var.flex-container(row,space-between,center);
-                                gap: 0.5vh;
-                                padding: 0 1vh 0 0.5vh;
-                                div.newNoteInputs {
-                                    padding: 0.5vh 0;
-                                    width: 25vw;
-                                    height: 100%;
-                                    @include var.flex-container(column,center,center);
-                                    gap: 0.5vh;
-                                    input {
-                                        background-color: var.$secDark;
-                                        height: 4vh;
-                                        width: 100%;
-                                        border: none;
-                                        padding: 0.5vh;
-                                        font-size: 1rem;
-                                        color: var.$prim;
-                                        &:focus {
-                                            outline: none;
-                                        }
-                                        &::placeholder {
-                                            color: var.$prim;
-                                        }
-                                    }
-                                }
-                                button {
-                                    background-color: rgba(0, 0, 0, 0.5);
-                                    color: var.$prim;
-                                    height: 85%;
-                                    width: 9vh;
-                                    font-size: 2rem;
-                                    border: none;
-                                    cursor: pointer;
-                                    &:hover {
-                                        background-color: rgba(0, 0, 0, 0.3);
-                                    }
-                                }
-                            }
-                            position: absolute;
-                            left: 4vh;
-                            transition: 0.2s all ease-in;
-                            opacity: 0;
-                            top: 23vh;
-                            &.open {
-                                transition: 0.2s all ease-in;
-                                opacity: 1;
-                                visibility: visible;
-                            }
-                        }
+                    border-radius: 50px;
+                    i {
+                        color: var.$prim;
+                        font-size: 1.2rem;
+                        transition: 0.5s all ease-in-out;
                     }
-                    &.searchNote {
-                        div.searchNoteSection {
-    
+                    &:hover {
+                        i {
+                            transition: 0.5s all ease-in-out;
+                            transform: rotate(360deg);
                         }
                     }
                 }
@@ -91,6 +38,11 @@ section.Home {
         }
         &.notes {
             width: 100%;
+            padding: 1vh;
+            background-color: var.$sec;
+            border-radius: 20px 20px 0 0;
+            min-height: 76vh;
+            box-shadow: 1px -5px 9px -4px rgba(0,0,0,0.3);
             .my-masonry-grid {
                 display: -webkit-box; /* Not needed if autoprefixing */
                 display: -ms-flexbox; /* Not needed if autoprefixing */
@@ -110,13 +62,6 @@ section.Home {
 @media screen and (max-width: 765px) {
     section.Home {
         section {
-            &.newNote {
-                form {
-                    div.newNoteInputs {
-                        width: 75vw;
-                    }
-                }
-            }
         }
     }
 }
@@ -125,13 +70,6 @@ section.Home {
 @media screen and (min-width: 766px) and (max-width: 1023px) {
     section.Home {
         section {
-            &.newNote {
-                form {
-                    div.newNoteInputs {
-                        width: 82vw;
-                    }
-                }
-            }
         }
     }
 }
