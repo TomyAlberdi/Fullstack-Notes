@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Note from '../Note'
+import AddNote from '../utils/AddNote'
+import SearchNote from '../utils/SearchNote'
 import Masonry from 'react-masonry-css'
-import Swal from 'sweetalert2'
 import 'sweetalert2/src/sweetalert2.scss'
 
 const Home = ({User,Token}) => {
@@ -44,8 +45,8 @@ const Home = ({User,Token}) => {
             <section className="controlPanel">
                 <h1>My Notes</h1>
                 <div>
-                    <span><i className="fa-solid fa-search"></i></span>
-                    <span><i className="fa-solid fa-add"></i></span>
+                    <AddNote />
+                    <SearchNote />
                 </div>
             </section>
             <section className="notes">
