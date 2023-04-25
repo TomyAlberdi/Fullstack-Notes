@@ -59,4 +59,12 @@ public class NoteController {
         }
     }
 
+    @GetMapping("/search/{id}/{string}")
+    public ResponseEntity<?> searchNote(@PathVariable Long id,@PathVariable String string) {
+        List<Note> notes = noteService.searchNote(id,string);
+        var array = new ArrayList<>();
+        return notes.isEmpty()
+                ? ResponseEntity.status(HttpStatus.NOT_FOUND).body(array)
+                : ResponseEntity.ok(notes);
+    }
 }

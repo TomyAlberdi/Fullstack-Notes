@@ -61,6 +61,7 @@ public class WebSecurityConfig {
                     .requestMatchers(new AntPathRequestMatcher("/notes/add")).authenticated()
                     .requestMatchers(new AntPathRequestMatcher("/notes/list/{id}")).authenticated()
                     .requestMatchers(new AntPathRequestMatcher("/notes/delete/{id}")).authenticated()
+                    .requestMatchers(new AntPathRequestMatcher("/notes/search/{id}/{string}")).authenticated()
                     .anyRequest().permitAll() // Permitir acceso para cualquier otra solicitud
                     .and()
                     .httpBasic()
