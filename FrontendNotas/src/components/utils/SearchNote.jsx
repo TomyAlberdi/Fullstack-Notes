@@ -23,8 +23,8 @@ const SearchNote = () => {
   return (
     <section className="SearchNote" ref={wrapperRef}>
       <span className='controlIcon' onClick={() => setOpen(!Open)}><i className={"fa-solid " + (Open ? "fa-xmark" : "fa-search")}></i></span>
-      <section className={"ControlForm SearchNoteForm " + (Open ? " open" : "")}>
-      </section>
+      <form className={"ControlForm SearchNoteForm " + (Open ? " open" : "")}>
+      </form>
     </section>
   )
 }

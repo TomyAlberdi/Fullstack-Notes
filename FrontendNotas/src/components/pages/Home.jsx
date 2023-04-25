@@ -45,8 +45,8 @@ const Home = ({User,Token}) => {
             <section className="controlPanel">
                 <h1>My Notes</h1>
                 <div>
-                    <AddNote />
-                    <SearchNote />
+                    <AddNote User={User} Token={Token} setLoadingNotes={setLoadingNotes} />
+                    <SearchNote User={User} Token={Token} setLoadingNotes={setLoadingNotes} />
                 </div>
             </section>
             <section className="notes">

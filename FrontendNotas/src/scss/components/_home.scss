@@ -15,39 +15,65 @@ section.Home {
             div {
                 @include var.flex-container(row,center,center);
                 gap: 1vh;
-                span.controlIcon {
-                    @include var.flex-container(row,center,center);
-                    background-color: var.$secDark;
-                    width: 60px;
-                    height: 60px;
-                    cursor: pointer;
-                    border-radius: 50px;
-                    i {
-                        color: var.$prim;
-                        font-size: 1.2rem;
-                        transition: 0.1s all ease-in-out;
-                    }
-                    &:hover {
+                section.AddNote, section.SearchNote {
+                    span.controlIcon {
+                        @include var.flex-container(row,center,center);
+                        background-color: var.$secDark;
+                        width: 60px;
+                        height: 60px;
+                        cursor: pointer;
+                        border-radius: 50px;
                         i {
+                            color: var.$prim;
+                            font-size: 1.2rem;
                             transition: 0.1s all ease-in-out;
-                            font-size: 1.5rem;
+                        }
+                        &:hover {
+                            i {
+                                transition: 0.1s all ease-in-out;
+                                font-size: 1.5rem;
+                            }
                         }
                     }
-                }
-                section.ControlForm {
-                    position: absolute;
-                    width: 20vw;
-                    right: 2vh;
-                    margin-top: 1vh;
-                    border-radius: 5px;
-                    background-color: var.$secDark;
-                    transition: 0.2s all ease-in;
-                    opacity: 0;
-                    visibility: hidden;
-                    &.open {
-                      transition: 0.2s all ease-in;
-                      opacity: 1;
-                      visibility: visible;
+                    form.ControlForm {
+                        position: absolute;
+                        padding: 1vh;
+                        width: 20vw;
+                        right: 2vh;
+                        margin-top: 1vh;
+                        border-radius: 5px;
+                        background-color: var.$secDark;
+                        transition: 0.2s all ease-in;
+                        opacity: 0;
+                        visibility: hidden;
+                        &.AddNoteForm {
+                            @include var.flex-container(column,center,center);
+                            gap: 1vh;
+                            input, button, textarea {
+                                width: 100%;
+                                border: none;
+                                padding: 1vh;
+                                &#title {
+                                    height: 4vh;
+                                    font-size: 1rem;
+                                }
+                                &#text {
+                                    height: 10vh;
+                                    resize: none;
+                                }
+                                &#button {
+                                    background-color: var.$acc;
+                                    color: var.$prim;
+                                    font-size: 1.2rem;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                        &.open {
+                          transition: 0.2s all ease-in;
+                          opacity: 1;
+                          visibility: visible;
+                        }
                     }
                 }
             }
@@ -81,7 +107,7 @@ section.Home {
             &.controlPanel {
                 padding: 1vh;
                 div {
-                    section.ControlForm {
+                    form.ControlForm {
                         width: 96%;
                         right: 1vh;
                     }
@@ -97,7 +123,7 @@ section.Home {
         section {
             &.controlPanel {
                 div {
-                    section.ControlForm {
+                    form.ControlForm {
                         width: 40%;
                     }
                 }
