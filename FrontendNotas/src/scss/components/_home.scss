@@ -46,29 +46,6 @@ section.Home {
                         transition: 0.2s all ease-in;
                         opacity: 0;
                         visibility: hidden;
-                        &.AddNoteForm {
-                            @include var.flex-container(column,center,center);
-                            gap: 1vh;
-                            input, button, textarea {
-                                width: 100%;
-                                border: none;
-                                padding: 1vh;
-                                &#title {
-                                    height: 4vh;
-                                    font-size: 1rem;
-                                }
-                                &#text {
-                                    height: 10vh;
-                                    resize: none;
-                                }
-                                &#button {
-                                    background-color: var.$acc;
-                                    color: var.$prim;
-                                    font-size: 1.2rem;
-                                    cursor: pointer;
-                                }
-                            }
-                        }
                         &.open {
                           transition: 0.2s all ease-in;
                           opacity: 1;
@@ -107,9 +84,11 @@ section.Home {
             &.controlPanel {
                 padding: 1vh;
                 div {
-                    form.ControlForm {
-                        width: 96%;
-                        right: 1vh;
+                    section.AddNote, section.SearchNote {
+                        form.ControlForm {
+                            width: 97%;
+                            right: 0.5vh;
+                        }
                     }
                 }
             }
@@ -123,8 +102,10 @@ section.Home {
         section {
             &.controlPanel {
                 div {
-                    form.ControlForm {
-                        width: 40%;
+                    section.AddNote, section.SearchNote {
+                        form.ControlForm {
+                            width: 60%;
+                        }
                     }
                 }
             }

@@ -26,7 +26,7 @@ const AddNote = ({User,Token,setLoadingNotes}) => {
     e.preventDefault()
     let title = e.target.title
     let text = e.target.text
-    const url = `http://localhost:8080/notes/add`
+    const url = `http://192.168.0.183:8080/notes/add`
     const aux = {
       method: "POST",
       headers: {

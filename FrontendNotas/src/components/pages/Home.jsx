@@ -46,7 +46,7 @@ const Home = ({User,Token}) => {
                 <h1>My Notes</h1>
                 <div>
                     <AddNote User={User} Token={Token} setLoadingNotes={setLoadingNotes} />
-                    <SearchNote User={User} Token={Token} setLoadingNotes={setLoadingNotes} />
+                    <SearchNote User={User} Token={Token} setLoadingNotes={setLoadingNotes} setNotes={setNotes} />
                 </div>
             </section>
             <section className="notes">

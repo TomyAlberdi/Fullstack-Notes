@@ -1,16 +1,27 @@
 @use "./var";
 
 section.SearchNote {
-  section.SearchNoteForm {
-    height: 10vh;
+  form.SearchNoteForm {
+    @include var.flex-container(column,center,center);
+    gap: 1vh;
+    input, button {
+      width: 100%;
+      border: none;
+      padding: 1vh;
+      &#buttonSubmit, &#buttonClear{
+        background-color: var.$acc;
+        color: var.$prim;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+    }
   }
 }
 
 /* Query Mobile */
 @media screen and (max-width: 765px) {
   section.SearchNote {
-    section.SearchNoteForm {
-      height: 15%;
+    form.SearchNoteForm {
     }
   }
 }
@@ -18,8 +29,7 @@ section.SearchNote {
 /* Query Tablet */
 @media screen and (min-width: 766px) and (max-width: 1023px) {
   section.SearchNote {
-    section.SearchNoteForm {
-      height: 15%;
+    form.SearchNoteForm {
     }
   }
 }
