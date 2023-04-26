@@ -55,6 +55,7 @@ header {
       }
       div.DesktopMenu {
         @include var.flex-container(column, left, flex-start);
+        background-color: rgba(0, 0, 0, 0.6);
         position: absolute;
         left: 2vh;
         width: 13vw;

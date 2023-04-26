@@ -151,7 +151,12 @@ const Navbar = ({ User, setUser }) => {
               </>
             ) : (
               <>
-                <h2>actions available to users</h2>
+                <Link to={"/Home"} onClick={openMenu}>
+                  Home
+                </Link>
+                <Link to={"/Profile"} onClick={openMenu}>
+                  Profile
+                </Link>
               </>
             )}
           </section>
