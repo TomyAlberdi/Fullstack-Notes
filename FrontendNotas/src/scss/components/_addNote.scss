@@ -2,26 +2,28 @@
 
 section.AddNote {
   form.AddNoteForm {
-    @include var.flex-container(column,center,center);
+    @include var.flex-container(column, center, center);
     gap: 1vh;
-    input, button, textarea {
-        width: 100%;
-        border: none;
-        padding: 1vh;
-        &#title {
-          height: 4vh;
-          font-size: 1rem;
-        }
-        &#text {
-          height: 10vh;
-          resize: none;
-        }
-        &#button {
-          background-color: var.$acc;
-          color: var.$prim;
-          font-size: 1.2rem;
-          cursor: pointer;
-        }
+    input,
+    button,
+    textarea {
+      width: 100%;
+      border: none;
+      padding: 1vh;
+      &#title {
+        height: 4vh;
+        font-size: 1rem;
+      }
+      &#text {
+        height: 10vh;
+        resize: none;
+      }
+      &#button {
+        background-color: var.$acc;
+        color: var.$prim;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
     }
   }
 }
@@ -30,7 +32,9 @@ section.AddNote {
 @media screen and (max-width: 765px) {
   section.AddNote {
     form.AddNoteForm {
-      input, button, textarea {
+      input,
+      button,
+      textarea {
         &#text {
           height: 14vh;
         }

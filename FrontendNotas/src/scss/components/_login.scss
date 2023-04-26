@@ -1,84 +1,84 @@
 @use "./var";
 
 section.Login {
-    @include var.flex-container(column,center,center);
-    height: 86vh;
-    color: var.$black;
-    h1 {
-        font-size: 2rem;
-    }
-    form {
-        @include var.flex-container(column,center,center);
-        width: 30%;
-        padding: 2.5vh 0;
-        gap: 3vh;
-        section {
-            width: 100%;
-            input {
-                width: inherit;
-                height: 5vh;
-                font-weight: 300;
-                border: none;
-                border-radius: 5px;
-                font-size: 1rem;
-                padding: 0 2vh;
-                &.invalid {
-                    border: 1px solid red;
-                    color: red;
-                }
-            }
-            span.error {
-                color: red;
-                font-weight: 300;
-            }
+  @include var.flex-container(column, center, center);
+  height: 86vh;
+  color: var.$black;
+  h1 {
+    font-size: 2rem;
+  }
+  form {
+    @include var.flex-container(column, center, center);
+    width: 30%;
+    padding: 2.5vh 0;
+    gap: 3vh;
+    section {
+      width: 100%;
+      input {
+        width: inherit;
+        height: 5vh;
+        font-weight: 300;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        padding: 0 2vh;
+        &.invalid {
+          border: 1px solid red;
+          color: red;
         }
-        button {
-            background-color: var.$secDark;
-            color: white;
-            font-size: 1rem;
-            width: 100%;
-            border: none;
-            border-radius: 5px;
-            height: 5vh;
-            transition: 0.2s all ease;
-            cursor: pointer;
-            &:hover {
-                transition: 0.2s all ease;
-                background-color: var.$sec
-            }
-        }
+      }
+      span.error {
+        color: red;
+        font-weight: 300;
+      }
     }
-    h3 {
-        font-size: 1.4rem;
-        a {
-            text-decoration: none;
-            color: var.$acc;
-        }
+    button {
+      background-color: var.$secDark;
+      color: white;
+      font-size: 1rem;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      height: 5vh;
+      transition: 0.2s all ease;
+      cursor: pointer;
+      &:hover {
+        transition: 0.2s all ease;
+        background-color: var.$sec;
+      }
     }
+  }
+  h3 {
+    font-size: 1.4rem;
+    a {
+      text-decoration: none;
+      color: var.$acc;
+    }
+  }
 }
 
 /* Query Mobile */
 @media screen and (max-width: 765px) {
-    section.Login {
-        form {
-            width: 80%;
-        }
-        h3 {
-            width: 80%;
-            text-align: center;
-        }
+  section.Login {
+    form {
+      width: 80%;
     }
+    h3 {
+      width: 80%;
+      text-align: center;
+    }
+  }
 }
 
 /* Query Tablet */
 @media screen and (min-width: 766px) and (max-width: 1023px) {
-    section.Login {
-        form {
-            width: 50%;
-        }
-        h3 {
-            width: 50%;
-            text-align: center;
-        }
+  section.Login {
+    form {
+      width: 50%;
     }
+    h3 {
+      width: 50%;
+      text-align: center;
+    }
+  }
 }

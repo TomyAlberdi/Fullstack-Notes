@@ -2,13 +2,15 @@
 
 section.SearchNote {
   form.SearchNoteForm {
-    @include var.flex-container(column,center,center);
+    @include var.flex-container(column, center, center);
     gap: 1vh;
-    input, button {
+    input,
+    button {
       width: 100%;
       border: none;
       padding: 1vh;
-      &#buttonSubmit, &#buttonClear{
+      &#buttonSubmit,
+      &#buttonClear {
         background-color: var.$acc;
         color: var.$prim;
         font-size: 1.2rem;
