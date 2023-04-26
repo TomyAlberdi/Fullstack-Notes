@@ -67,4 +67,14 @@ public class NoteController {
                 ? ResponseEntity.status(HttpStatus.NOT_FOUND).body(array)
                 : ResponseEntity.ok(notes);
     }
+
+    @PatchMapping("/update")
+    public ResponseEntity<?> update(@RequestBody Note note) {
+        if (userService.findById(note.getUser().getId()).isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User id " + note.getUser().getId() + " do not exists");
+        } else {
+            noteService.update(note);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Note updated");
+        }
+    }
 }

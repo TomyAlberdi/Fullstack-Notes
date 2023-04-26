@@ -51,4 +51,8 @@ public class NoteService {
         return noteRepository.searchNote(id, string);
     }
 
+    public Note update(Note note) {
+        return noteRepository.save(note);
+    }
+
 }
