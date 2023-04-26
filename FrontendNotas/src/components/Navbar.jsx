@@ -71,7 +71,13 @@ const Navbar = ({ User, setUser }) => {
                 <div
                   className={"DesktopMenu " + (OpenMenuDesktop ? " open" : "")}
                 >
-                  <section className="MenuItem">
+                  <section
+                    className="MenuItem"
+                    onClick={() => {
+                      navigate("/Profile");
+                      setOpenMenuDesktop(false);
+                    }}
+                  >
                     <h4>
                       Profile<i className="fa-solid fa-user"></i>
                     </h4>
