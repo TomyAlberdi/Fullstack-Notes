@@ -3,7 +3,9 @@ import React from 'react'
 const Profile = () => {
   return (
     <section className="Profile">
-      <h2>profile</h2>
+      <section className="info">
+        <h2>info</h2>
+      </section>
     </section>
   )
 }

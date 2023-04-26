@@ -71,7 +71,7 @@ const Navbar = ({ User, setUser }) => {
                 <div
                   className={"DesktopMenu " + (OpenMenuDesktop ? " open" : "")}
                 >
-                  <section
+                  {/* <section
                     className="MenuItem"
                     onClick={() => {
                       navigate("/Profile");
@@ -81,7 +81,7 @@ const Navbar = ({ User, setUser }) => {
                     <h4>
                       Profile<i className="fa-solid fa-user"></i>
                     </h4>
-                  </section>
+                  </section> */}
                   <section
                     className="MenuItem"
                     onClick={() => {
@@ -154,9 +154,9 @@ const Navbar = ({ User, setUser }) => {
                 <Link to={"/Home"} onClick={openMenu}>
                   Home
                 </Link>
-                <Link to={"/Profile"} onClick={openMenu}>
+                {/* <Link to={"/Profile"} onClick={openMenu}>
                   Profile
-                </Link>
+                </Link> */}
               </>
             )}
           </section>
