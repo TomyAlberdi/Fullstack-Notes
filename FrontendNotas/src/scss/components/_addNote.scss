@@ -1,0 +1,52 @@
+@use "./var";
+
+section.AddNote {
+  form.AddNoteForm {
+    @include var.flex-container(column, center, center);
+    gap: 1vh;
+    input,
+    button,
+    textarea {
+      width: 100%;
+      border: none;
+      padding: 1vh;
+      &#title {
+        height: 4vh;
+        font-size: 1rem;
+      }
+      &#text {
+        height: 10vh;
+        resize: none;
+      }
+      &#button {
+        background-color: var.$acc;
+        color: var.$prim;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+  section.AddNote {
+    form.AddNoteForm {
+      input,
+      button,
+      textarea {
+        &#text {
+          height: 14vh;
+        }
+      }
+    }
+  }
+}
+
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+  section.AddNote {
+    form.AddNoteForm {
+    }
+  }
+}
