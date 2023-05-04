@@ -43,7 +43,7 @@ section.Home {
             right: 2vh;
             margin-top: 1vh;
             border-radius: 5px;
-            background-color: var.$secDark;
+            background-color: var.$sec;
             transition: 0.2s all ease-in;
             opacity: 0;
             visibility: hidden;
@@ -59,7 +59,7 @@ section.Home {
     &.notes {
       width: 100%;
       padding: 1vh;
-      background-color: var.$sec;
+      background-color: var.$secDark;
       border-radius: 20px 20px 0 0;
       min-height: 76vh;
       box-shadow: 1px -5px 9px -4px rgba(0, 0, 0, 0.3);

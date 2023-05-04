@@ -1,6 +1,18 @@
 @use "./var";
 
 section.Welcome {
+  @include var.flex-container(row,center,center);
+  gap: 5vw;
+  padding: 2vh;
+  height: 86vh;
+  background-image: url(../../../public/vecteezy_abstract-blue-fluid-wave-background_.jpg);
+  section {
+    width: 25%;
+    height: 70%;
+    border-radius: 10px;
+    box-shadow: var.$shadow;
+    background-color: var.$primDark;
+  }
 }
 
 /* Query Mobile */

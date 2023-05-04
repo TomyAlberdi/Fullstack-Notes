@@ -6,7 +6,7 @@ article.Note {
   height: fit-content;
   border-radius: 10px;
   margin-bottom: 1vh;
-  box-shadow: 0px 4px 4px 0px rgb(0, 0, 0, 0.4);
+  box-shadow: var.$shadow;
   h4 {
     font-size: 1.3rem;
   }

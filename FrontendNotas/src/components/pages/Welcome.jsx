@@ -11,7 +11,12 @@ const Welcome = ({ User }) => {
 
   return (
     <section className="Welcome">
-      <h2>Welcome page</h2>
+      <section className="introduction">
+        <h2>intro</h2>
+      </section>
+      <section className="demostration">
+        <h2>demostrac</h2>
+      </section>
     </section>
   );
 };
