@@ -4,8 +4,11 @@ section.Login {
   @include var.flex-container(column, center, center);
   height: 86vh;
   color: var.$black;
+  background-image: url(../../../public/vecteezy_abstract-blue-fluid-wave-background_.jpg);
   h1 {
     font-size: 2rem;
+    color: var.$prim;
+    font-weight: 500;
   }
   form {
     @include var.flex-container(column, center, center);
@@ -37,10 +40,11 @@ section.Login {
       color: white;
       font-size: 1rem;
       width: 100%;
-      border: none;
+      border: 1px solid var.$acc;
       border-radius: 5px;
       height: 5vh;
       transition: 0.2s all ease;
+      font-weight: 400;
       cursor: pointer;
       &:hover {
         transition: 0.2s all ease;
@@ -49,6 +53,8 @@ section.Login {
     }
   }
   h3 {
+    font-weight: 400;
+    color: var.$prim;
     font-size: 1.4rem;
     a {
       text-decoration: none;
