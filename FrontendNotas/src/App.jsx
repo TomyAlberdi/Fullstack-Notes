@@ -1,12 +1,10 @@
 import "./scss/App.scss";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import Welcome from "./components/pages/Welcome";
 import Register from "./components/pages/Register";
-import Profile from "./components/pages/Profile";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -34,11 +32,9 @@ function App() {
           />
           <Route path="/Register" element={<Register />} />
           <Route path="/Home" element={<Home User={User} Token={Token} />} />
-          <Route path="/Profile" element={<Profile User={User} />} />
           <Route path="*" element={<Navigate to="/Home" />} />
         </Routes>
       </main>
-      <Footer />
     </div>
   );
 }

@@ -4,11 +4,11 @@ section.Welcome {
   @include var.flex-container(row,center,center);
   gap: 5vw;
   padding: 2vh;
-  height: 86vh;
+  height: 90vh;
   background-image: url(../../../public/vecteezy_abstract-blue-fluid-wave-background_.jpg);
   section {
     width: 25%;
-    height: 70%;
+    height: 64%;
     border-radius: 10px;
     box-shadow: var.$shadow;
     background-color: var.$primDark;
