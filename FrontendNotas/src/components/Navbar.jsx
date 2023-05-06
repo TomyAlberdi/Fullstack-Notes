@@ -71,17 +71,6 @@ const Navbar = ({ User, setUser }) => {
                 <div
                   className={"DesktopMenu " + (OpenMenuDesktop ? " open" : "")}
                 >
-                  {/* <section
-                    className="MenuItem"
-                    onClick={() => {
-                      navigate("/Profile");
-                      setOpenMenuDesktop(false);
-                    }}
-                  >
-                    <h4>
-                      Profile<i className="fa-solid fa-user"></i>
-                    </h4>
-                  </section> */}
                   <section
                     className="MenuItem"
                     onClick={() => {
@@ -113,7 +102,7 @@ const Navbar = ({ User, setUser }) => {
           <i className="fa-solid fa-bars"></i>
         </div>
         <div className="imgLogo">
-          <Link to={"/Home"}>
+          <Link to={!!User ? "/Home" : "/"}>
             <img src="/favicon.ico" />
           </Link>
         </div>
