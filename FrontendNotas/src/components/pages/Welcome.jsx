@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import FlipCard from "../utils/FlipCard";
 
 const Welcome = ({ User }) => {
   const navigate = useNavigate();
@@ -23,7 +24,11 @@ const Welcome = ({ User }) => {
         </div>
       </section>
       <section className="demostration">
-        <h2>demostrac</h2>
+        {
+          [...Array(4)].map((x,i) => 
+            <FlipCard i={i} key={i} />
+          )
+        }
       </section>
     </section>
   );
