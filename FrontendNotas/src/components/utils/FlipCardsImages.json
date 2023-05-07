@@ -1,0 +1,22 @@
+[
+  {
+    "imageFront":"/card1back.svg",
+    "imageBack":"/card1front.svg",
+    "delay":1000
+  },
+  {
+    "imageFront":"/card2back.svg",
+    "imageBack":"/card2front.svg",
+    "delay":3000
+  },
+  {
+    "imageFront":"/card3back.svg",
+    "imageBack":"/card3front.svg",
+    "delay":5000
+  },
+  {
+    "imageFront":"/card4back.svg",
+    "imageBack":"/card4front.svg",
+    "delay":7000
+  }
+]
