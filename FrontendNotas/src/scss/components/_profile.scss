@@ -36,12 +36,14 @@ section.Profile {
       &.div2 { 
         grid-area: 1 / 2 / 2 / 4; 
         font-size: 3rem;
-        @include var.flex-container(row,left,center);
+        @include var.flex-container(row,center,center);
       }
       &.div3 { 
         grid-area: 2 / 2 / 3 / 4; 
         @include var.flex-container(row,left,center);
         font-size: 1.3rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       &.div4 { 
         grid-area: 3 / 1 / 5 / 4; 
@@ -66,13 +68,46 @@ section.Profile {
 /* Query Mobile */
 @media screen and (max-width: 765px) {
   section.Profile {
-
+    section.profileInfo {
+      width: 90%;
+      height: 44%;
+      div {
+        &.div1 { 
+          section {
+            width: 20vw;
+            height: 20vw;
+            font-size: 3rem;
+          }
+        }
+        &.div2 { 
+          font-size: 1.7rem;
+        }
+        &.div3 { 
+          font-size: 1.1rem;
+        }
+        &.div4 { 
+          grid-area: 3 / 1 / 5 / 4; 
+        } 
+      }
+    }
   }
 }
 
 /* Query Tablet */
 @media screen and (min-width: 766px) and (max-width: 1023px) {
   section.Profile {
-
+    section.profileInfo {
+      width: 90%;
+      height: 50%;
+      div {
+        &.div1 {
+          section {
+            width: 20vw;
+            height: 20vw;
+            font-size: 6rem;
+          }
+        }
+      }
+    }
   }
 }

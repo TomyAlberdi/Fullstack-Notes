@@ -14,7 +14,7 @@ const Profile = ({User}) => {
           {User.username}
         </div>
         <div className="div3">
-          {User.email}
+          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
         </div>
         <div className="div4">
           description
