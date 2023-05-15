@@ -1,7 +1,66 @@
 @use "./var";
 
 section.Profile {
-
+  background-image: url(../../../public/vecteezy_abstract-blue-fluid-wave-background_.jpg);
+  height: 90vh;
+  @include var.flex-container(column, center, center);
+  section.profileInfo {
+    background-color: var.$primDark;
+    box-shadow: var.$shadow;
+    width: 40%;
+    height: 66%;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1.3fr 0.7fr repeat(2, 1fr) 0.3fr;     
+    column-gap: 1vh;
+    row-gap: 1vh;
+    padding: 1vh;
+    color: var.$prim;
+    div {
+      background-color: rgba(23, 17, 78, 1);
+      border-radius: 10px;
+      padding: 1vh;
+      &.div1 { 
+        grid-area: 1 / 1 / 3 / 2; 
+        @include var.flex-container(row,center,center);
+        section {
+          @include var.flex-container(row,space-evenly,center);
+          border: 5px solid var.$acc;
+          border-radius: 50%;
+          width: 11vw;
+          height: 11vw;
+          font-size: 5rem;
+        }
+      }
+      &.div2 { 
+        grid-area: 1 / 2 / 2 / 4; 
+        font-size: 3rem;
+        @include var.flex-container(row,left,center);
+      }
+      &.div3 { 
+        grid-area: 2 / 2 / 3 / 4; 
+        @include var.flex-container(row,left,center);
+        font-size: 1.3rem;
+      }
+      &.div4 { 
+        grid-area: 3 / 1 / 5 / 4; 
+      } 
+    }
+    a.div5 { 
+      background-color: rgba(23, 17, 78, 1);
+      border-radius: 10px;
+      padding: 1vh;
+      grid-area: 5 / 1 / 6 / 4;
+      @include var.flex-container(row,center,center);
+      gap: 1vh;
+      text-decoration: none;
+      color: var.$prim;
+      &:hover {
+        background-color: rgb(45, 38, 114);
+      }
+    } 
+  }
 }
 
 /* Query Mobile */
@@ -14,6 +73,6 @@ section.Profile {
 /* Query Tablet */
 @media screen and (min-width: 766px) and (max-width: 1023px) {
   section.Profile {
-    
+
   }
 }
