@@ -24,7 +24,7 @@ const Profile = ({User}) => {
               <div className="div4">
                 description
               </div>
-              <Link className="div5">
+              <Link to={"/EditProfile"} className="div5">
                 Edit Profile <i className="fa-solid fa-pen-to-square"></i>
               </Link>
             </section>

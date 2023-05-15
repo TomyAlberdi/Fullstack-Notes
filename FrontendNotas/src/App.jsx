@@ -6,6 +6,7 @@ import Login from "./components/pages/Login";
 import Welcome from "./components/pages/Welcome";
 import Register from "./components/pages/Register";
 import Profile from "./components/pages/Profile";
+import EditProfile from "./components/pages/EditProfile";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path="/Register" element={<Register />} />
           <Route path="/Home" element={<Home User={User} Token={Token} />} />
           <Route path="/Profile" element={<Profile User={User} />} />
+          <Route path="/EditProfile" element={<EditProfile User={User} Token={Token} />} />
           <Route path="*" element={<Navigate to="/Home" />} />
         </Routes>
       </main>
