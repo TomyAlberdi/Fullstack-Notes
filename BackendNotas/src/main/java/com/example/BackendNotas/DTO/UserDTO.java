@@ -23,4 +23,7 @@ public class UserDTO {
     @Column(name = "pasword")
     private String password;
 
+    @Column(name = "description")
+    private String description;
+
 }

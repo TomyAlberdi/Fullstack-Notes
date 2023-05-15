@@ -26,6 +26,7 @@ public class UserService {
     public User add(UserDTO userDTO) {
         User user = new User();
         user.setUsername(userDTO.getUsername());
+        user.setDescription("Hey there! I'm using Notes App.");
         if (userRepository.findByEmail(userDTO.getEmail()).isEmpty()) {
             user.setEmail(userDTO.getEmail());
         }
