@@ -61,7 +61,6 @@ const Navbar = ({ User, setUser }) => {
                 <div className="userIcon">
                   {User.username.charAt(0).toUpperCase()}
                 </div>
-                <h3>{User.username}</h3>
                 <i
                   className={
                     "fa-solid " +
