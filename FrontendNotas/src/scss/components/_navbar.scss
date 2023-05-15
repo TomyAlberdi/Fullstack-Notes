@@ -33,7 +33,7 @@ header {
       padding: 1vh;
       background-color: rgba(0, 0, 0, 0.3);
       gap: 1vh;
-      width: 10vw;
+      width: 8vw;
       cursor: pointer;
       div.userIcon {
         width: 3vw;
@@ -55,7 +55,6 @@ header {
       }
       div.DesktopMenu {
         @include var.flex-container(column, left, flex-start);
-        background-color: rgba(0, 0, 0, 0.6);
         position: absolute;
         left: 2vh;
         width: 10vw;

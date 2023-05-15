@@ -84,6 +84,17 @@ const Navbar = ({ User, setUser }) => {
                   <section
                     className="MenuItem"
                     onClick={() => {
+                      navigate("/Profile");
+                      setOpenMenuDesktop(false);
+                    }}
+                  >
+                    <h4>
+                      Profile <i className="fa-solid fa-user"></i>
+                    </h4>
+                  </section>
+                  <section
+                    className="MenuItem"
+                    onClick={() => {
                       LogOut();
                       setOpenMenuDesktop(false);
                     }}
@@ -142,9 +153,9 @@ const Navbar = ({ User, setUser }) => {
                 <Link to={"/Home"} onClick={openMenu}>
                   Home
                 </Link>
-                {/* <Link to={"/Profile"} onClick={openMenu}>
+                <Link to={"/Profile"} onClick={openMenu}>
                   Profile
-                </Link> */}
+                </Link>
               </>
             )}
           </section>
