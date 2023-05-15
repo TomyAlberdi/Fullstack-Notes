@@ -240,15 +240,18 @@ section.mobileMenu {
   header {
     nav {
       div.userInfo {
-        width: 31vw;
+        width: 16vw;
         div.userIcon {
           width: 7vw;
           height: 7vw;
         }
-      }
-      div.DesktopMenu {
-        left: 1vw;
-        width: 31vw;
+        i {
+          font-size: 2.5rem;
+        }
+        div.DesktopMenu {
+          left: 1vw;
+          width: 25vw;
+        }
       }
     }
   }
