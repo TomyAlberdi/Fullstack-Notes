@@ -1,13 +1,13 @@
 @use "./components/var";
 @use "./components/navbar";
-@use "./components/footer";
 @use "./components/home";
 @use "./components/login";
 @use "./components/register";
 @use "./components/welcome";
 @use "./components/note";
-@use "./components/addNote";
-@use "./components/searchNote";
+@use "./components/utils/addNote";
+@use "./components/utils/searchNote";
+@use "./components/utils/flipCard";
 @use "./components/profile";
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400;500;700&display=swap");
 
@@ -23,7 +23,7 @@ html {
     div.App {
       main {
         background-color: var.$primDark;
-        min-height: 96vh;
+        min-height: 100vh;
         padding-top: 10vh;
       }
     }

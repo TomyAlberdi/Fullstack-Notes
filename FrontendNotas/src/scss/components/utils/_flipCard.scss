@@ -1,0 +1,31 @@
+@use "../var";
+
+div.FlipCard {
+  @include var.flex-container(row,center,center);
+  position: relative;
+  .side {
+    border-radius: 10px;
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    will-change: transform, opacity;
+    background-size: cover;
+  }
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+  div.FlipCard {
+  
+  }
+  
+}
+
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+  div.FlipCard {
+  
+  }
+  
+}

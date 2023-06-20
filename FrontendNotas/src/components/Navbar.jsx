@@ -61,7 +61,6 @@ const Navbar = ({ User, setUser }) => {
                 <div className="userIcon">
                   {User.username.charAt(0).toUpperCase()}
                 </div>
-                <h3>{User.username}</h3>
                 <i
                   className={
                     "fa-solid " +
@@ -71,17 +70,6 @@ const Navbar = ({ User, setUser }) => {
                 <div
                   className={"DesktopMenu " + (OpenMenuDesktop ? " open" : "")}
                 >
-                  {/* <section
-                    className="MenuItem"
-                    onClick={() => {
-                      navigate("/Profile");
-                      setOpenMenuDesktop(false);
-                    }}
-                  >
-                    <h4>
-                      Profile<i className="fa-solid fa-user"></i>
-                    </h4>
-                  </section> */}
                   <section
                     className="MenuItem"
                     onClick={() => {
@@ -91,6 +79,17 @@ const Navbar = ({ User, setUser }) => {
                   >
                     <h4>
                       Home<i className="fa-solid fa-house"></i>
+                    </h4>
+                  </section>
+                  <section
+                    className="MenuItem"
+                    onClick={() => {
+                      navigate("/Profile");
+                      setOpenMenuDesktop(false);
+                    }}
+                  >
+                    <h4>
+                      Profile <i className="fa-solid fa-user"></i>
                     </h4>
                   </section>
                   <section
@@ -113,7 +112,7 @@ const Navbar = ({ User, setUser }) => {
           <i className="fa-solid fa-bars"></i>
         </div>
         <div className="imgLogo">
-          <Link to={"/Home"}>
+          <Link to={!!User ? "/Home" : "/"}>
             <img src="/favicon.ico" />
           </Link>
         </div>
@@ -154,9 +153,9 @@ const Navbar = ({ User, setUser }) => {
                 <Link to={"/Home"} onClick={openMenu}>
                   Home
                 </Link>
-                {/* <Link to={"/Profile"} onClick={openMenu}>
+                <Link to={"/Profile"} onClick={openMenu}>
                   Profile
-                </Link> */}
+                </Link>
               </>
             )}
           </section>

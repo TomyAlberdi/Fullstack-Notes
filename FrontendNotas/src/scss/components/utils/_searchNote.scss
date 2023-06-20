@@ -1,24 +1,16 @@
-@use "./var";
+@use "../var";
 
-section.AddNote {
-  form.AddNoteForm {
+section.SearchNote {
+  form.SearchNoteForm {
     @include var.flex-container(column, center, center);
     gap: 1vh;
     input,
-    button,
-    textarea {
+    button {
       width: 100%;
       border: none;
       padding: 1vh;
-      &#title {
-        height: 4vh;
-        font-size: 1rem;
-      }
-      &#text {
-        height: 10vh;
-        resize: none;
-      }
-      &#button {
+      &#buttonSubmit,
+      &#buttonClear {
         background-color: var.$acc;
         color: var.$prim;
         font-size: 1.2rem;
@@ -30,23 +22,16 @@ section.AddNote {
 
 /* Query Mobile */
 @media screen and (max-width: 765px) {
-  section.AddNote {
-    form.AddNoteForm {
-      input,
-      button,
-      textarea {
-        &#text {
-          height: 14vh;
-        }
-      }
+  section.SearchNote {
+    form.SearchNoteForm {
     }
   }
 }
 
 /* Query Tablet */
 @media screen and (min-width: 766px) and (max-width: 1023px) {
-  section.AddNote {
-    form.AddNoteForm {
+  section.SearchNote {
+    form.SearchNoteForm {
     }
   }
 }

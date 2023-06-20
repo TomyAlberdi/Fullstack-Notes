@@ -1,12 +1,113 @@
 @use "./var";
 
 section.Welcome {
+  @include var.flex-container(row,center,center);
+  gap: 5vw;
+  padding: 2vh;
+  height: 90vh;
+  background-image: url(../../../public/vecteezy_abstract-blue-fluid-wave-background_.jpg);
+  section {
+    width: 25%;
+    height: 64%;
+    border-radius: 10px;
+    box-shadow: var.$shadow;
+    background-color: var.$primDark;
+    &.introduction {
+      @include var.flex-container(row,center,center);
+      position: relative;
+      div {
+        @include var.flex-container(row,unset,center);
+        width: 100%;
+        height: 25%;
+        background-color: var.$acc;
+        position: absolute;
+        &.topBubble {
+          padding-right: 2vw;
+          justify-content: right;
+          border-radius: 10px 10px 0 50%;
+          top: 0;
+          h1 {
+            font-size: 2.5rem;
+            color: var.$prim;
+            font-weight: 400;
+          }
+        }
+        &.bottomBubble {
+          padding-left: 2vw;
+          border-radius: 0 50% 10px 10px;
+          bottom: 0;
+          h3 {
+            font-weight: 400;
+            font-size: 1.5rem;
+            a {
+              color: var.$prim;
+              text-decoration: none;
+              cursor: pointer;
+              &:hover {
+                color: var.$prim;
+              }
+            }
+          }
+        }
+      }
+      p {
+        color: var.$black;
+        line-height: 30px;
+        width: 70%;
+        text-align: center;
+        font-size: 1.75rem;
+        span {
+          color: var.$acc;
+        }
+      }
+    }
+    &.demostration {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr); 
+      background-color: var.$acc;
+      place-items: center;
+      div.FlipCard {
+        width: 93%;
+        height: 94%;
+        &.div1 { 
+          grid-area: 1 / 1 / 2 / 2; 
+        }
+        &.div2 { 
+          grid-area: 1 / 2 / 2 / 3; 
+        }
+        &.div3 { 
+          grid-area: 2 / 1 / 3 / 2; 
+        }
+        &.div4 { 
+          grid-area: 2 / 2 / 3 / 3; 
+        } 
+      }
+
+    }
+  }
 }
 
 /* Query Mobile */
 @media screen and (max-width: 765px) {
+  section.Welcome {
+    section {
+      width: 90%;
+      &.demostration {
+        display: none;
+      }
+    }
+  }
 }
 
 /* Query Tablet */
 @media screen and (min-width: 766px) and (max-width: 1023px) {
+  section.Welcome {
+    section {
+      width: 80%;
+      &.demostration {
+        display: none;
+      }
+    }
+  }
 }
