@@ -91,9 +91,17 @@ section.Profile {
       }
       a {
         border-radius: 0 10px 10px 0;
+        i {
+          color: red;
+          padding-left: 1vh;
+        }
       }
       button {
         border-radius: 10px 0 0 10px;
+        i {
+          color: green;
+          padding-left: 1vh;
+        }
       }
     }
   }

@@ -24,10 +24,10 @@ const EditProfile = ({User,Token}) => {
               <textarea className='div4' name="description" id="description" placeholder={User.description}></textarea>
               <section className="buttonOptions">
                 <button type='submit' >
-                  Save Changes
+                  Save Changes <i className="fa-solid fa-check"></i>
                 </button>
                 <Link to={"/Profile"}>
-                  Cancel
+                  Cancel <i className="fa-solid fa-xmark"></i>
                 </Link>
               </section>
             </form>
