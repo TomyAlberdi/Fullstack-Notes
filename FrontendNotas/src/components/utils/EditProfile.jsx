@@ -22,9 +22,14 @@ const EditProfile = ({User,Token}) => {
               <input className='div2' type="text" name="username" id="username" placeholder={User.username} />
               <input className='div3' type="text" name="email" id="email" placeholder={User.email} />
               <textarea className='div4' name="description" id="description" placeholder={User.description}></textarea>
-              <button className="div5" type='submit' >
-                Save Changes
-              </button>
+              <section className="buttonOptions">
+                <button type='submit' >
+                  Save Changes
+                </button>
+                <Link to={"/Profile"}>
+                  Cancel
+                </Link>
+              </section>
             </form>
           </section>
       }

@@ -55,7 +55,7 @@ section.Profile {
         resize: none;
       } 
     }
-    a.div5, button.div5 { 
+    a.div5 { 
       background-color: rgba(23, 17, 78, 1);
       border-radius: 10px;
       padding: 1vh;
@@ -71,13 +71,38 @@ section.Profile {
       border: none;
       cursor: pointer;
     } 
+    section.buttonOptions {
+      grid-area: 5 / 1 / 6 / 4;
+      gap: 1vh;
+      @include var.flex-container(row,center,center);
+      button, a {
+        text-align: center;
+        background-color: rgba(23, 17, 78, 1);
+        width: 50%;
+        padding: 1vh;
+        text-decoration: none;
+        color: var.$prim;
+        font-size: 1rem;
+        &:hover {
+          background-color: rgb(45, 38, 114);
+        }
+        border: none;
+        cursor: pointer;
+      }
+      a {
+        border-radius: 0 10px 10px 0;
+      }
+      button {
+        border-radius: 10px 0 0 10px;
+      }
+    }
   }
 }
 
 /* Query Mobile */
 @media screen and (max-width: 765px) {
   section.Profile {
-    section.profileInfo {
+    section.profileInfo, form.profileForm {
       width: 90%;
       height: 44%;
       div {
@@ -105,7 +130,7 @@ section.Profile {
 /* Query Tablet */
 @media screen and (min-width: 766px) and (max-width: 1023px) {
   section.Profile {
-    section.profileInfo {
+    section.profileInfo, form.profileForm {
       width: 90%;
       height: 50%;
       div {
