@@ -36,7 +36,9 @@ const SearchNote = ({ User, Token, setLoadingNotes, setNotes }) => {
       const res = await fetch(url, aux);
       if (res.ok) {
         const data = await res.json();
-        setNotes(data);
+        setNotes({
+          "notes": data
+        });
         setOpen(false);
         search.value = "";
       } else {
