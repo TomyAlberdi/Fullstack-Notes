@@ -1,6 +1,7 @@
 package com.example.BackendNotas.Controller;
 
 import com.example.BackendNotas.DTO.NoteDTO;
+import com.example.BackendNotas.DTO.UserNotesDTO;
 import com.example.BackendNotas.Entity.Note;
 import com.example.BackendNotas.Entity.User;
 import com.example.BackendNotas.Service.NoteService;
@@ -40,12 +41,17 @@ public class NoteController {
 
     @GetMapping("/list/{id}")
     public ResponseEntity<?> listByUser(@PathVariable Long id) {
-        List<Note> notes = noteService.listByUserId(id);
-        var array = new ArrayList<>();
-
-        return notes.isEmpty()
-                ? ResponseEntity.status(HttpStatus.NOT_FOUND).body(array)
-                : ResponseEntity.ok(notes);
+        var user = userService.findById(id);
+        if (user.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario no existente");
+        } else {
+            List<Note> notes = noteService.listByUserId(id);
+            UserNotesDTO response = new UserNotesDTO(user.get(),notes);
+            var array = new ArrayList<>();
+            return notes.isEmpty()
+                    ? ResponseEntity.status(HttpStatus.NOT_FOUND).body(array)
+                    : ResponseEntity.ok(response);
+        }
     }
 
     @DeleteMapping("/delete/{id}")
@@ -70,8 +76,8 @@ public class NoteController {
 
     @PatchMapping("/update")
     public ResponseEntity<?> update(@RequestBody Note note) {
-        if (userService.findById(note.getUser().getId()).isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User id " + note.getUser().getId() + " do not exists");
+        if (userService.findById(note.getUser_id()).isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User id " + note.getUser_id() + " do not exists");
         } else {
             noteService.update(note);
             return ResponseEntity.status(HttpStatus.CREATED).body("Note updated");

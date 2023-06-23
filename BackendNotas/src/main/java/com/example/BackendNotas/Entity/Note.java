@@ -34,9 +34,7 @@ public class Note {
     private String text;
 
     @NotNull
-    @ManyToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name = "user_id")
-    @JsonIgnoreProperties({"password"})
-    private User user;
+    @NotBlank
+    private Long user_id;
 
 }

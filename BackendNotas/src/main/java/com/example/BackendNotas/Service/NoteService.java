@@ -30,7 +30,7 @@ public class NoteService {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found");
         } else {
             User user = userOptional.get();
-            note.setUser(user);
+            note.setUser_id(user.getId());
             return noteRepository.save(note);
         }
     }
