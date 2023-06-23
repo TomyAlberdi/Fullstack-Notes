@@ -34,7 +34,6 @@ public class Note {
     private String text;
 
     @NotNull
-    @NotBlank
     private Long user_id;
 
 }
