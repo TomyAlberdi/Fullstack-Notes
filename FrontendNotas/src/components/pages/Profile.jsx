@@ -22,7 +22,7 @@ const Profile = ({User}) => {
                 {User.email}
               </div>
               <div className="div4">
-                description
+                {User.description}
               </div>
               <Link to={"/EditProfile"} className="div5">
                 Edit Profile <i className="fa-solid fa-pen-to-square"></i>

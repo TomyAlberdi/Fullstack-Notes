@@ -6,7 +6,7 @@ import Login from "./components/pages/Login";
 import Welcome from "./components/pages/Welcome";
 import Register from "./components/pages/Register";
 import Profile from "./components/pages/Profile";
-import EditProfile from "./components/pages/EditProfile";
+import EditProfile from "./components/utils/EditProfile";
 import { useEffect, useState } from "react";
 
 function App() {

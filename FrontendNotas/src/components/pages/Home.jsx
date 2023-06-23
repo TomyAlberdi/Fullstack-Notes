@@ -66,7 +66,7 @@ const Home = ({ User, Token }) => {
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column"
           >
-            {Notes.map((e, index) => {
+            {Notes.notes.map((e, index) => {
               return (
                 <Note
                   key={index}
