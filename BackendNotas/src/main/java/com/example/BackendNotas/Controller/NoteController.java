@@ -55,7 +55,7 @@ public class NoteController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Note with ID " + id + " not found");
         } else {
             noteService.delete(id);
-            return ResponseEntity.ok().body("Note deleted succesfully");
+            return ResponseEntity.ok().body("Note deleted successfully");
         }
     }
 
