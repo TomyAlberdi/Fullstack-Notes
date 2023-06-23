@@ -10,17 +10,8 @@ import lombok.Setter;
 @Setter
 public class UserDTO {
 
-    @NotBlank
-    @Column(name = "username")
     private String username;
-
-    @NotBlank
-    @Email
-    @Column(name = "email")
     private String email;
-
-    @NotBlank
-    @Column(name = "pasword")
     private String password;
-
+    private String description;
 }

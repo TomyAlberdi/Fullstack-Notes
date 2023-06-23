@@ -58,7 +58,7 @@ public class UserController {
                 : ResponseEntity.ok(user);
     }
 
-    @GetMapping("/searchEmail/{email}")
+    @GetMapping("/search/{email}")
     public ResponseEntity<?> searchByEmail(@PathVariable String email) {
         Optional<User> user = userService.findByEmail(email);
         return user.isEmpty()

@@ -34,4 +34,8 @@ public class User {
     @Column(name = "pasword")
     private String password;
 
+    @NotBlank
+    @Column(name = "description")
+    private String description;
+
 }

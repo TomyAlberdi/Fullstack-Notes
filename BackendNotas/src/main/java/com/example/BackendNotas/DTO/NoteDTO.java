@@ -10,13 +10,8 @@ import lombok.Setter;
 @Setter
 public class NoteDTO {
 
-    @NotBlank
     private String title;
-
-    @NotNull
     private String text;
-
-    @NotNull
     private Long user_id;
 
 }
